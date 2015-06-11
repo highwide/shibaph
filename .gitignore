@@ -18,7 +18,6 @@
 
 ### https://raw.github.com/github/gitignore/a1ed257134eb4f769b203db874004c9371642952/Rails.gitignore
 
-*.rbc
 capybara-*.html
 .rspec
 /log
@@ -29,11 +28,8 @@ capybara-*.html
 /coverage/
 /spec/tmp
 **.orig
-rerun.txt
 pickle-email-*.html
 
-# TODO Comment out these rules if you are OK with secrets being uploaded to the repo
-config/initializers/secret_token.rb
 config/secrets.yml
 
 ## Environment normalisation:
@@ -43,9 +39,6 @@ config/secrets.yml
 # these should all be checked in to normalise the environment:
 # Gemfile.lock, .ruby-version, .ruby-gemset
 
-# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
-.rvmrc
-
 # if using bower-rails ignore default bower_components path bower.json files
 /vendor/assets/bower_components
 *.bowerrc
@@ -53,7 +46,6 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
-
 
 ### https://raw.github.com/github/gitignore/a1ed257134eb4f769b203db874004c9371642952/Global/Vim.gitignore
 
@@ -63,5 +55,3 @@ bower.json
 Session.vim
 .netrwhist
 *~
-
-
