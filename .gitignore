@@ -15,3 +15,43 @@
 /log/*
 !/log/.keep
 /tmp
+
+### https://raw.github.com/github/gitignore/a1ed257134eb4f769b203db874004c9371642952/Rails.gitignore
+
+capybara-*.html
+.rspec
+/log
+/tmp
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/system
+/coverage/
+/spec/tmp
+**.orig
+pickle-email-*.html
+
+config/secrets.yml
+
+## Environment normalisation:
+/.bundle
+/vendor/bundle
+
+# these should all be checked in to normalise the environment:
+# Gemfile.lock, .ruby-version, .ruby-gemset
+
+# if using bower-rails ignore default bower_components path bower.json files
+/vendor/assets/bower_components
+*.bowerrc
+bower.json
+
+# Ignore pow environment settings
+.powenv
+
+### https://raw.github.com/github/gitignore/a1ed257134eb4f769b203db874004c9371642952/Global/Vim.gitignore
+
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
