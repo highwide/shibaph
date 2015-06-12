@@ -1,0 +1,18 @@
+box: wercker/rvm
+build:
+  steps:
+    - rvm-use:
+        version: ruby-2.2.2
+    - bundle-install:
+        deployment: true
+    - rails-database-yml
+    - script:
+        name: Set up db
+        code: bundle exec rake db:schema:load
+    - script:
+        name: Set up assets
+        code: bundle exec rake assets:precompile
+    - script:
+        name: rake spec
+        code: bundle exec rake test
+
