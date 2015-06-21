@@ -1,4 +1,6 @@
 box: wercker/rvm
+services:
+    - wercker/postgresql
 build:
   steps:
     - rvm-use:
