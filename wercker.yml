@@ -15,4 +15,8 @@ build:
     - script:
         name: rake spec
         code: bundle exec rake test
-
+  after-steps:
+    - slack-notifier:
+        url: $SLACK_URL
+        channel: notification
+        username: wercker
