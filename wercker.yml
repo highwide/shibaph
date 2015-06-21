@@ -17,6 +17,12 @@ build:
         name: Set up db
         code: bundle exec rake db:schema:load
     - script:
+        name: Install bower via npm
+        code: sudo npm install -g bower
+    - script:
+        name: Install bower's package
+        code: bundle exec rake bower:install
+    - script:
         name: Set up assets
         code: bundle exec rake assets:precompile
     - script:
