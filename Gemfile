@@ -44,3 +44,4 @@ group :development, :test do
   gem 'bower-rails'
 end
 
+gem 'slim-rails'
