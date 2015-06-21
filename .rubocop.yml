@@ -1,0 +1,8 @@
+AsciiComments:
+  Enabled: false
+
+Syle/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/DotPosition:
+  EnforcedStyle: leading
