@@ -2,10 +2,15 @@ box: wercker/rvm
 build:
   steps:
     - rvm-use:
-        version: ruby-2.2.2
-    - bundle-install:
-        deployment: true
+        version: 2.2.0
+    - bundle-install
     - rails-database-yml
+    - script:
+        name: echo ruby information
+        code: |
+            echo "ruby version $(ruby --version) running"
+            echo "from location $(which ruby)"
+            echo -p "gem list: $(gem list)"
     - script:
         name: Set up db
         code: bundle exec rake db:schema:load
