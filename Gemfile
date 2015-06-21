@@ -18,6 +18,7 @@ group :development do
   gem 'sqlite3'
   gem 'better_errors'
   gem 'rubocop'
+  gem 'annotate'
 end
 
 group :development, :test do
