@@ -55,3 +55,6 @@ bower.json
 Session.vim
 .netrwhist
 *~
+
+# tag file
+tags
