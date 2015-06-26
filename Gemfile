@@ -14,6 +14,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'slim-rails'
 gem 'bower-rails'
 
+gem 'omniauth-twitter'
+
 group :development do
   gem 'sqlite3'
   gem 'better_errors'
