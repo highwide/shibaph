@@ -23,6 +23,12 @@ group :development do
   gem 'annotate'
 end
 
+group :test do
+  gem 'minitest-rails'
+  gem 'minitest-power_assert'
+  gem 'minitest-reporters'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
