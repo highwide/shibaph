@@ -1,0 +1,13 @@
+nav.navbar.navbar-inverse.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
+        span.icon-bar
+        span.icon-bar
+      = link_to 'Shibaph', root_path, {class: "navbar-brand"}
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          = link_to 'Sign Up with Twitter', "#"
+        li
+          = link_to 'Sign In', "#"
