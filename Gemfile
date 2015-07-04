@@ -17,6 +17,7 @@ gem 'bower-rails'
 gem 'omniauth-twitter'
 
 group :development do
+  gem 'thin'
   gem 'sqlite3'
   gem 'better_errors'
   gem 'rubocop'
