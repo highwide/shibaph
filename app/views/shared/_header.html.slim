@@ -7,7 +7,9 @@ nav.navbar.navbar-inverse.navbar-fixed-top
       = link_to 'Shibaph', root_path, {class: "navbar-brand"}
     .collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
-        li
-          = link_to 'Sign Up with Twitter', "#"
-        li
-          = link_to 'Sign In', "#"
+        - if logged_in?
+          li
+            = link_to current_user.name, '#'
+        - else
+          li
+            = link_to 'Sign Up / Sign In with Twitter', '/auth/developer'
