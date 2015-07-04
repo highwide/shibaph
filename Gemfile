@@ -19,6 +19,7 @@ group :development do
   gem 'better_errors'
   gem 'rubocop'
   gem 'annotate'
+  gem 'reek'
 end
 
 group :development, :test do
