@@ -14,12 +14,20 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'slim-rails'
 gem 'bower-rails'
 
+gem 'omniauth-twitter'
+
 group :development do
   gem 'sqlite3'
   gem 'better_errors'
   gem 'rubocop'
   gem 'annotate'
   gem 'reek'
+end
+
+group :test do
+  gem 'minitest-rails'
+  gem 'minitest-power_assert'
+  gem 'minitest-reporters'
 end
 
 group :development, :test do
