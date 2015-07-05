@@ -1,0 +1,2 @@
+module DailyProgressesHelper
+end

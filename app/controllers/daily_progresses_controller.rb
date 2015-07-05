@@ -1,0 +1,2 @@
+class DailyProgressesController < ApplicationController
+end
