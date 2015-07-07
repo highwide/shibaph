@@ -33,3 +33,9 @@ build:
         url: $SLACK_URL
         channel: notification
         username: wercker
+deploy:
+  after-steps:
+    - slack-notifier:
+        url: $SLACK_URL
+        channel: notification
+        username: wercker
