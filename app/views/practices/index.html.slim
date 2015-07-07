@@ -1,34 +1,15 @@
 .profile.row
-  .pict.col-xs-4
-    | ここにあとで画像が入る
+  = image_tag(@user.image, class: 'col-xs-4')
   .name.col-xs-8
-    h3 highwide
-ul.practices-list.col-md-12
-  li.practice.row
-    .title.col-xs-12
-      i.fa.fa-check-square-o.fa-2x
-      .text
-        h3 腹筋をする
-    .daily-progress.col-xs-12
-      | ここに例の進捗グラフ
-    .total.col-xs-12.col-md-4
-      .text-muted.col-md-12
-        | Total done in this year
-      .count.col-md-12
-        | *** total
-      .text-muted.col-md-12
-        | YYYY MM DD - YYYY MM DD
-    .longest-streak.col-xs-12.col-md-4
-      .text-muted.col-md-12
-        | Longest streak
-      .count.col-md-12
-        | ** days
-      .text-muted.col-md-12
-        | YYYY MM DD - YYYY MM DD
-    .current-streak.col-xs-12.col-md-4
-      .text-muted.col-md-12
-        | Current streak
-      .count.col-md-12
-        | ** days
-      .text-muted.col-md-12
-        | *** hour ago
+    h3 = @user.name
+- if @practices.present?
+  ul.practices-list.col-md-12
+    - @practices.each do |practice|
+      li.practice.row
+        .title.col-xs-12
+          i.fa.fa-check-square-o.fa-2x
+          .text
+            h3 = link_to practice.title, practice_path(practice.id)
+- else 
+  .no-practice
+    | まだ習慣が登録されていません

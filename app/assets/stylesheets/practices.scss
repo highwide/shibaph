@@ -17,35 +17,38 @@
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 3px;
-    .title {
-      margin: none;
-      border-bottom: 1px solid #ddd;
-      .fa.fa-check-square-o {
-        text-align: center;
-        float: left;
-        margin: 10px
-      }
-      h3 {
-        margin: 10px;
-        font-weight: 900;
-      }
+  }
+}
+
+.practice {
+  .title {
+    margin: none;
+    border-bottom: 1px solid #ddd;
+    .fa.fa-check-square-o {
+      text-align: center;
+      float: left;
+      margin: 10px
     }
-    .daily-progress {
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
+    h3 {
+      margin: 10px;
+      font-weight: 900;
     }
-    .total, .longest-streak {
-      border-bottom: 1px solid #ddd;
+  }
+  .daily-progress {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  .total, .longest-streak {
+    border-bottom: 1px solid #ddd;
+  }
+  .total, .longest-streak, .current-streak {
+    padding: 10px;
+    .text-muted {
+      color: #767676;
     }
-    .total, .longest-streak, .current-streak {
-      padding: 10px;
-      .text-muted {
-        color: #767676;
-      }
-      .count {
-        font-weight: 900;
-        font-size: 24px;
-      }
+    .count {
+      font-weight: 900;
+      font-size: 24px;
     }
   }
 }
