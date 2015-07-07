@@ -34,6 +34,8 @@ build:
         channel: notification
         username: wercker
 deploy:
+  steps:
+    - heroku-deploy
   after-steps:
     - slack-notifier:
         url: $SLACK_URL
