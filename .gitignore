@@ -58,3 +58,6 @@ Session.vim
 
 # tag file
 tags
+
+# dotenv
+.env
