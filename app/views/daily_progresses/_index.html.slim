@@ -1,6 +1,6 @@
 svg
   g transform='translate(20, 20)'
-    - @date_per_week.each_with_index do |w, i|
+    - @display_dates.each_with_index do |w, i|
       g transform="translate(#{i * 13}, 0)"
         - w.each do |d|
           rect width='11' height='11' y="#{d.wday * 13}" fill='#eeeeee'
