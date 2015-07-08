@@ -1,6 +1,6 @@
 h3 {
-  margin: 10px;
   font-weight: 900;
+  margin: 10px;
 }
 
 .profile {
@@ -13,6 +13,7 @@ h3 {
 .practices-list {
   list-style-type: none;
   margin: 20px 5px;
+
   .practice {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -21,9 +22,11 @@ h3 {
 }
 
 .practice {
+
   .title {
     border-bottom: 1px solid #ddd;
     margin: none;
+    
     .fa.fa-check-square-o {
       float: left;
       margin: 10px;
@@ -39,9 +42,11 @@ h3 {
   .analysis-box {
     border-bottom: 1px solid #ddd;
     padding: 10px;
+
     .text-muted {
       color: #767676;
     }
+
     .count {
       font-size: 24px;
       font-weight: 900;

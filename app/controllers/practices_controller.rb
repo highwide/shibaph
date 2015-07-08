@@ -15,7 +15,7 @@ class PracticesController < ApplicationController
 
   def create
   end
-  
+
   def destroy
   end
 
