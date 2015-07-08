@@ -1,5 +1,6 @@
 class PracticesController < ApplicationController
   def index
+    # TODO: current_userから取得する
     @user = User.first
     @practices = @user.practices
   end
