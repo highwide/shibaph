@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     abstract_type (0.0.7)
+    action_args (1.5.3)
     actionmailer (4.2.3)
       actionpack (= 4.2.3)
       actionview (= 4.2.3)
@@ -263,6 +264,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  action_args
   annotate
   better_errors
   bower-rails

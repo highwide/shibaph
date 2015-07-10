@@ -16,6 +16,8 @@ gem 'bower-rails'
 
 gem 'omniauth-twitter'
 
+gem 'action_args'
+
 group :development do
   gem 'thin'
   gem 'sqlite3'
