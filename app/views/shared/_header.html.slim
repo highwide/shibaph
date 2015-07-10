@@ -8,6 +8,11 @@ nav.navbar.navbar-inverse.navbar-fixed-top
     .collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
         - if logged_in?
+          li.hidden-xs
+            = link_to '#' do
+              i.glyphicon.glyphicon-plus.white
+          li.visible-xs-inline
+            = link_to 'New Practice', '#'
           li
             = link_to current_user.name, '#'
         - else
