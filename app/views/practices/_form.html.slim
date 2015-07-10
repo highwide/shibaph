@@ -1,4 +1,10 @@
-= form_for @practice do |f|
+= form_for practice do |f|
+  - if practice.errors.any?
+    ul.bg-danger
+      - practice.errors.full_messages.each do |message|
+        li
+          = message
+
   .form-group
     = f.label :title
     = f.text_field :title, class: 'form-control', maxlength: 50
