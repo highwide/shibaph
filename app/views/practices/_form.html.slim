@@ -1,0 +1,8 @@
+= form_for Practice.new do |f|
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: 'form-control', maxlength: 50
+  .form-group
+    = f.label :unit
+    = f.text_field :unit, class: 'form-control', maxlength: 10
+  = f.button 'Submit', class: 'btn btn-default'

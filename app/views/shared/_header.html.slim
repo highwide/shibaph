@@ -9,10 +9,10 @@ nav.navbar.navbar-inverse.navbar-fixed-top
       ul.nav.navbar-nav.navbar-right
         - if logged_in?
           li.hidden-xs
-            = link_to '#' do
+            = link_to new_practice_path do
               i.glyphicon.glyphicon-plus.white
           li.visible-xs-inline
-            = link_to 'New Practice', '#'
+            = link_to 'New Practice', new_practice_path
           li
             = link_to current_user.name, '#'
         - else
