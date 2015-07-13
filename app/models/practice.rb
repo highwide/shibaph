@@ -20,4 +20,6 @@ class Practice < ActiveRecord::Base
   validates  :user,    presence: true
   validates  :title,   presence: true, length: { maximum: 50 }
   validates  :unit,    presence: true, length: { maximum: 10 }
+
+  before_create { daily_progresses.build(done_at: Time.zone.now) }
 end
