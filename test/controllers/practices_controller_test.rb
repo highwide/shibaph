@@ -20,4 +20,12 @@ class PracticesControllerTest < ActionController::TestCase
     assert { practice.unit == 'km' }
     assert { practice.daily_progresses.count == 1 }
   end
+
+  test "should post create, but failed" do
+    post :create, practice: { title: 'running', unit: nil }
+
+    assert_template :new
+
+    assert_nil Practice.find_by(title: 'running')
+  end
 end
