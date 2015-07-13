@@ -18,6 +18,8 @@ class PracticesController < ApplicationController
 
   def create(practice)
     @practice = Practice.new(practice).tap { |p| p.user = current_user }
+    @practice.daily_progresses.build(done_at: Time.zone.now)
+
     if @practice.save
       redirect_to :root, notice: '習慣を登録しました'
     else
