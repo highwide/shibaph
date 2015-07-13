@@ -1,10 +1,6 @@
 require 'test_helper'
 
 class PracticesControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-
   def setup
     user = User.create(
       provider: 'twitter',
