@@ -2,9 +2,7 @@ class PracticesController < ApplicationController
   permits :title, :unit
 
   def index
-    # TODO: current_userから取得する
-    @user = User.first
-    @practices = @user.practices
+    @practices = current_user.practices
   end
 
   def show
