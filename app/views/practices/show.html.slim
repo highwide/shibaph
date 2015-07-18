@@ -1,0 +1,28 @@
+.practice
+  .title.col-xs-12
+    i.fa.fa-check-square-o.fa-2x
+    .text
+      h3 = @practice.title
+  .daily-progress.col-xs-12
+    = render partial: 'daily_progresses'
+  .analysis-box.col-xs-12.col-md-4
+    .text-muted.col-md-12
+      | Total done in this year
+    .count.col-md-12
+      | *** total
+    .text-muted.col-md-12
+      | YYYY MM DD - YYYY MM DD
+  .analysis-box.col-xs-12.col-md-4
+    .text-muted.col-md-12
+      | Longest streak
+    .count.col-md-12
+      | ** days
+    .text-muted.col-md-12
+      | YYYY MM DD - YYYY MM DD
+  .analysis-box.col-xs-12.col-md-4
+    .text-muted.col-md-12
+      | Current streak
+    .count.col-md-12
+      | ** days
+    .text-muted.col-md-12
+      | *** hour ago

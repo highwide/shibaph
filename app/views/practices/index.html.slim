@@ -1,0 +1,15 @@
+.profile.row
+  = image_tag(@user.image, class: 'col-xs-4')
+  .name.col-xs-8
+    h3 = @user.name
+- if @practices.present?
+  ul.practices-list.col-md-12
+    - @practices.each do |practice|
+      li.practice.row
+        .title.col-xs-12
+          i.fa.fa-check-square-o.fa-2x
+          .text
+            h3 = link_to practice.title, practice_path(practice.id)
+- else
+  .no-practice
+    | まだ習慣が登録されていません

@@ -1,3 +1,55 @@
-// Place all the styles related to the Practices controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h3 {
+  font-weight: 900;
+  margin: 10px;
+}
+
+.profile {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  margin: none;
+  padding: 10px;
+}
+
+.practices-list {
+  list-style-type: none;
+  margin: 20px 5px;
+
+  .practice {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+}
+
+.practice {
+
+  .title {
+    border-bottom: 1px solid #ddd;
+    margin: none;
+    
+    .fa.fa-check-square-o {
+      float: left;
+      margin: 10px;
+      text-align: center;
+    }
+  }
+
+  .daily-progress {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  .analysis-box {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+
+    .text-muted {
+      color: #767676;
+    }
+
+    .count {
+      font-size: 24px;
+      font-weight: 900;
+    }
+  }
+}
