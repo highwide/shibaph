@@ -19,3 +19,13 @@ body {
   padding-top: 50px;
   background-color: #fafafa;
 }
+
+.bg-danger,
+ bg-success {
+  padding: 15px;
+
+  li {
+    list-style: none;
+  }
+}
+

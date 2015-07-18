@@ -1,2 +1,7 @@
 h1 Top#index
+
+- if flash[:notice]
+  p.bg-success
+    = flash[:notice]
+
 p Find me in app/views/top/index.html.slim
