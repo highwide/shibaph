@@ -1,8 +1,9 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   class Twitter
     def self.login?
-      ENV['TWITTER_KEY'].present? && ENV['TWITTER_SECRET'].present?
-    end
+      # FIXME Remove condititon depended on Rails env & mock it in test
+      ENV['TWITTER_KEY'].present? && ENV['TWITTER_SECRET'].present? && Rails.env != 'test'
+     end
   end
 
   if Twitter.login?
