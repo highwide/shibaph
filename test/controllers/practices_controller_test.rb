@@ -2,13 +2,7 @@ require 'test_helper'
 
 class PracticesControllerTest < ActionController::TestCase
   def setup
-    user = User.create(
-      provider: 'twitter',
-      name:     'John',
-      uid:      '1',
-      image:    'https://abs.twimg.com/sticky/default_profile_images/default_profile_2.png'
-    )
-    session[:user_id] = user.id
+    session[:user_id] = User.first.id
   end
 
   test "sohuld post create" do
