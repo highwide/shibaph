@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action -> { request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:twitter] } unless Rails.env.production?
+  before_action -> { request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:twitter] } unless Twitter.login?
 
   def create
     user = User.find_or_create_from_auth_hash(auth_hash)

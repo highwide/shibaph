@@ -1,6 +1,13 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  # provider :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
-  unless Rails.env.production?
+  class Twitter
+    def self.login?
+      ENV['TWITTER_KEY'].present? && ENV['TWITTER_SECRET'].present?
+    end
+  end
+
+  if Twitter.login?
+    provider :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
+  else
     provider :developer
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
