@@ -13,8 +13,9 @@ nav.navbar.navbar-inverse.navbar-fixed-top
               i.glyphicon.glyphicon-plus.white
           li.visible-xs-inline
             = link_to 'New Practice', new_practice_path
-          li
-            = link_to current_user.name, '#'
+          li.navbar-right__profile
+            = link_to '#' do
+              = image_tag(@user.image, class: 'img-rounded', size: '32x32')
         - else
           li
             = link_to 'Sign Up / Sign In with Twitter', sign_in_url
