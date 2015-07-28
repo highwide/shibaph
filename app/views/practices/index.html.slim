@@ -1,7 +1,4 @@
 .profile.row
-  = image_tag(current_user.image, class: 'col-xs-4')
-  .name.col-xs-8
-    h3 = current_user.name
 - if @practices.present?
   ul.practices-list.col-md-12
     - @practices.each do |practice|
