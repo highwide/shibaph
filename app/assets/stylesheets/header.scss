@@ -6,4 +6,12 @@
       color: #fff;
     }
   }
+
+  .navbar-right {
+    &__profile > a {
+      $navbar-padding-vertical: 10px;
+      padding-bottom: $navbar-padding-vertical;
+      padding-top: $navbar-padding-vertical;
+    }
+  }
 }
