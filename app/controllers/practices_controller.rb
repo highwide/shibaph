@@ -6,8 +6,10 @@ class PracticesController < ApplicationController
   end
 
   def show
+    display_months = 12
     @practice = Practice.find(params[:id])
-    @display_dates = format_dates_by_term(4)
+    progresses = @practice.daily_progresses.in_this_months(display_months)
+    @progresses = format(progresses, display_months)
   end
 
   def new
@@ -34,19 +36,20 @@ class PracticesController < ApplicationController
 end
 
 private
-def format_dates_by_term(month)
+
+def format(progresses, months)
   end_date = Time.zone.now
-  start_date = end_date.months_ago(month)
+  start_date = end_date.months_ago(months)
   date_per_week = []
 
   while (start_date <= end_date)
-    if date_per_week.empty? || date_per_week.last.last.wday == 6
-      date_per_week << [start_date]
+    if date_per_week.empty? || date_per_week.last.any? {|k, _| k.wday == 6}
+      date_per_week << \
+          {start_date => progresses.select{|p| p.done_at == start_date.to_date}.last}
     else
-      date_per_week.last << start_date
+      date_per_week.last[start_date] = progresses.select{|p| p.done_at == start_date.to_date}.last
     end
     start_date += 1.day
   end
-
   date_per_week
 end

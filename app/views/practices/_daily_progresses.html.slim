@@ -1,9 +1,9 @@
 svg
   g transform='translate(20, 20)'
-    - @display_dates.each_with_index do |w, i|
+    - @progresses.each_with_index do |p, i|
       g transform="translate(#{i * 13}, 0)"
-        - w.each do |d|
-          rect width='11' height='11' y="#{d.wday * 13}" fill='#eeeeee'
+        - p.each do |d, progress|
+          rect width='11' height='11' y="#{d.wday * 13}" fill="#{color(progress)}"
     text text-anchor='middle' dx='-10' dy='22'
       | M
     text text-anchor='middle' dx='-10' dy='48'

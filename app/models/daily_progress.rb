@@ -19,4 +19,11 @@ class DailyProgress < ActiveRecord::Base
   belongs_to :practice
   validates  :practice,    presence: true
   validates  :done_at,     presence: true
+
+  def self.in_this_months(month)
+    end_date = Time.zone.now
+    start_date = end_date.months_ago(month)
+
+    where(done_at: start_date..end_date)
+  end
 end
