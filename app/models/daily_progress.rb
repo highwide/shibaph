@@ -9,7 +9,7 @@
 # **`id`**           | `integer`          | `not null, primary key`
 # **`practice_id`**  | `integer`          |
 # **`done_at`**      | `date`             |
-# **`goal`**         | `integer`          |
+# **`goal`**         | `integer`          | `not null`
 # **`progress`**     | `integer`          |
 # **`created_at`**   | `datetime`         | `not null`
 # **`updated_at`**   | `datetime`         | `not null`
@@ -20,10 +20,5 @@ class DailyProgress < ActiveRecord::Base
   validates  :practice,    presence: true
   validates  :done_at,     presence: true
 
-  def self.in_this_months(month)
-    end_date = Time.zone.now
-    start_date = end_date.months_ago(month)
-
-    where(done_at: start_date..end_date)
-  end
+  scope :in_this_year, -> { where("done_at >= ?", Time.zone.now.years_ago(1)) }
 end
