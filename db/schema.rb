@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150621061920) do
+ActiveRecord::Schema.define(version: 20150818130105) do
 
   create_table "daily_progresses", force: :cascade do |t|
     t.integer  "practice_id"
     t.date     "done_at"
-    t.integer  "goal"
+    t.integer  "goal",        null: false
     t.integer  "progress"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

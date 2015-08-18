@@ -7,7 +7,8 @@ class PracticesController < ApplicationController
 
   def show
     @practice = Practice.find(params[:id])
-    @display_dates = format_dates_by_term(4)
+    progresses = @practice.daily_progresses.in_this_year
+    @progresses = format_for_graph_of_a_year(progresses)
   end
 
   def new
@@ -31,22 +32,24 @@ class PracticesController < ApplicationController
 
   def update
   end
-end
 
-private
-def format_dates_by_term(month)
-  end_date = Time.zone.now
-  start_date = end_date.months_ago(month)
-  date_per_week = []
+  private
 
-  while (start_date <= end_date)
-    if date_per_week.empty? || date_per_week.last.last.wday == 6
-      date_per_week << [start_date]
-    else
-      date_per_week.last << start_date
+  #
+  # Viewで表示するgraphのためにデータ構造を整形するメソッド
+  # 日付をkey, DailyProgressモデルをvalueとするHashを作り、
+  # 1週間ごと(土曜日(wdayが6)で切り替え)に別HashとしてArrayに詰め込んでいる
+  #
+  def format_for_graph_of_a_year(progresses)
+    end_date = Time.zone.now.to_date
+    start_date = end_date.years_ago(1).to_date
+    (start_date..end_date).each_with_object([]) do |date, formated_dates|
+      progress = progresses.find{|p| p.done_at == start_date}
+      if formated_dates.empty? || formated_dates.last.any? {|k, _| k.wday == 6}
+        formated_dates << {date => progress}
+      else
+        formated_dates.last[date] = progress
+      end
     end
-    start_date += 1.day
   end
-
-  date_per_week
 end
