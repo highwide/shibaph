@@ -31,6 +31,7 @@ group :test do
   gem 'minitest-rails'
   gem 'minitest-power_assert'
   gem 'minitest-reporters'
+  gem 'minitest-line'
 end
 
 group :development, :test do

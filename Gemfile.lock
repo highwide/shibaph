@@ -106,6 +106,8 @@ GEM
     mime-types (2.6.1)
     mini_portile (0.6.2)
     minitest (5.8.0)
+    minitest-line (0.6.3)
+      minitest (~> 5.0)
     minitest-power_assert (0.2.0)
       minitest
       power_assert
@@ -275,6 +277,7 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 2.0)
   jquery-rails
+  minitest-line
   minitest-power_assert
   minitest-rails
   minitest-reporters
