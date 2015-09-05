@@ -1,2 +1,11 @@
 IrresponsibleModule:
   enabled: false
+
+TooManyStatements:
+  enabled: false
+
+NestedIterators:
+  max_allowed_nesting: 3
+
+DuplicateMethodCall:
+  max_calls: 2
