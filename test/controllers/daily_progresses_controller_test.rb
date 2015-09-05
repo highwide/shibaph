@@ -6,6 +6,14 @@ class DailyProgressesControllerTest < ActionController::TestCase
     @practice = practices :one
   end
 
+  test 'should get new' do
+    yesterday_progress = DailyProgress.find_by(practice_id: @practice.id, done_at: Time.zone.yesterday)
+    get :new, daily_progress: { practice_id: @practice.id }
+
+    assert { assigns(:daily_progress).goal.eq yesterday_progress.progress }
+    assert_response 201
+  end
+
   test 'should post create valid' do
     post :create, daily_progress: { practice_id: @practice.id, progress: 5, goal: 1 }
 
