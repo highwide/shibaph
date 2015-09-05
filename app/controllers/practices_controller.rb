@@ -7,8 +7,9 @@ class PracticesController < ApplicationController
 
   def show
     @practice = Practice.find(params[:id])
-    progresses = @practice.daily_progresses.in_this_year
-    @progresses = format_for_graph_of_a_year(progresses)
+    @end_date = Time.zone.now.to_date
+    @start_date = @end_date.years_ago(1).to_date
+    @range_progresses = RangeProgresses.new(params[:id], @start_date, @end_date)
   end
 
   def new

@@ -9,20 +9,20 @@
     .text-muted.col-md-12
       | Total done in this year
     .count.col-md-12
-      | *** total
+      = "#{@range_progresses.total_done} days"
     .text-muted.col-md-12
-      | YYYY MM DD - YYYY MM DD
+      = "#{@start_date} - #{@end_date}"
   .analysis-box.col-xs-12.col-md-4
     .text-muted.col-md-12
       | Longest streak
     .count.col-md-12
-      | ** days
+      = "#{@range_progresses.longest_streak[:days]} days"
     .text-muted.col-md-12
-      | YYYY MM DD - YYYY MM DD
+      = "#{@range_progresses.longest_streak[:start_date]} - #{@range_progresses.longest_streak[:end_date]}"
   .analysis-box.col-xs-12.col-md-4
     .text-muted.col-md-12
       | Current streak
     .count.col-md-12
-      | ** days
+      = "#{@range_progresses.current_streak[:days]} days"
     .text-muted.col-md-12
-      | *** hour ago
+      = "From #{@range_progresses.current_streak[:start_date]}"

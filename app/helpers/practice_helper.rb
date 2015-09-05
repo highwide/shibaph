@@ -1,8 +1,6 @@
 module PracticeHelper
   # TODO: 使ってみて緑の濃さ調整する
-  def color(daily)
-    return '#eee' if daily.blank?
-    progress_rate = daily.progress.to_f / daily.goal.to_f
+  def color(progress_rate)
     if progress_rate > 1
       '#1e6823'
     elsif progress_rate == 1
