@@ -14,3 +14,15 @@ yesterday_progress:
 range_progress:
   <<: *DEFAULTS
   done_at: 2015-08-29
+
+continyity_progress1:
+  <<: *DEFAULTS
+  done_at: 2015-05-01
+
+continyity_progress2:
+  <<: *DEFAULTS
+  done_at: 2015-05-02
+
+continyity_progress3:
+  <<: *DEFAULTS
+  done_at: 2015-05-03

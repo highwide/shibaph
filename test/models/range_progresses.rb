@@ -16,4 +16,14 @@ class RangeProgressesTest < ActiveSupport::TestCase
   test '#total_done' do
     assert_equal 1, @range_progresses.total_done
   end
+
+  test '#longest_streak' do
+    result = @range_progresses.longest_streak
+    expectation = {
+      days: 3,
+      start_date: '2015-05-01'.to_date,
+      end_date: '2015-05-03'.to_date
+    }
+    assert { result == expectation }
+  end
 end
