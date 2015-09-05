@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  practice_id: 1
-  done_at: 2015-06-21
+DEFAULTS: &DEFAULTS
+  practice: oss
+  done_at: <%= Time.zone.today %>
   goal: 1
   progress: 1
 
-two:
-  practice_id: 1
-  done_at: 2015-06-21
-  goal: 1
-  progress: 1
+yesterday_progress:
+  practice: no_today_progress
+  done_at: <%= Time.zone.yesterday %>
+  goal: 5
+  progress: 10
+

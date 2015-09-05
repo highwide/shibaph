@@ -19,6 +19,14 @@ class DailyProgress < ActiveRecord::Base
   belongs_to :practice
   validates  :practice,    presence: true
   validates  :done_at,     presence: true
+  validates  :progress,    numericality: true
 
   scope :in_this_year, -> { where("done_at >= ?", Time.zone.now.years_ago(1)) }
+
+  after_initialize :set_goal
+
+  private
+  def set_goal
+    self.goal = DailyProgress.select(:progress).where(done_at: Time.zone.yesterday, practice_id: practice_id).pluck(:progress).first || 0
+  end
 end

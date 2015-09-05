@@ -1,11 +1,14 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+DEFAULTS: &DEFAULTS
+  user: john
+  title: my_practice
+  unit: count
 
-one:
-  user_id: 1
-  title: MyString
-  unit: MyString
+oss:
+  title: OSS Contribute
+  unit: pr
 
-two:
-  user_id: 1
-  title: MyString
-  unit: MyString
+no_progress:
+  title: No Progress
+
+no_today_progress:
+  title: No Today Progress
