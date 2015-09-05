@@ -43,7 +43,8 @@ class RangeProgresses
     return @current if defined? @current
 
     dates_from_current = @done_dates.reverse
-    if dates_from_current[0] == Time.zone.now.to_date
+    # FIXME: DuplicateMethodCall dates_from_current[0]
+    if dates_from_current[0] == Time.zone.today
       streak = 1
       start_date = dates_from_current[0]
       while dates_from_current[0] - 1.day == dates_from_current[1]
