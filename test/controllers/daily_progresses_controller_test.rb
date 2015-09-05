@@ -3,7 +3,7 @@ require 'test_helper'
 class DailyProgressesControllerTest < ActionController::TestCase
   def setup
     session[:user_id] = User.first.id
-    @practice = practices :one
+    @practice = practices :oss
   end
 
   test 'should get new' do
