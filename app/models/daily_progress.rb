@@ -26,7 +26,7 @@ class DailyProgress < ActiveRecord::Base
   after_initialize :set_goal
 
   private
-    def set_goal
-      self.goal = DailyProgress.select(:progress).where(done_at: Time.zone.yesterday, practice_id: practice_id).pluck(:progress).first || 0
-    end
+  def set_goal
+    self.goal = DailyProgress.select(:progress).where(done_at: Time.zone.yesterday, practice_id: practice_id).pluck(:progress).first || 0
+  end
 end
