@@ -28,7 +28,7 @@ group :development do
 end
 
 group :test do
-  gem 'minitest-rails'
+  gem 'minitest-rails-capybara'
   gem 'minitest-power_assert'
   gem 'minitest-reporters'
   gem 'minitest-line'
