@@ -8,7 +8,7 @@ oss:
   unit: pr
 
 no_progress:
-  title: No Porogress
+  title: No Progress
 
 no_today_progress:
-  title: No Today Porogress
+  title: No Today Progress
