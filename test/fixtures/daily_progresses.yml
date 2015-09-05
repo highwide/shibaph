@@ -11,3 +11,6 @@ yesterday_progress:
   goal: 5
   progress: 10
 
+range_progress:
+  <<: *DEFAULTS
+  done_at: 2015-08-29
