@@ -6,20 +6,9 @@ class DailyProgressesControllerTest < ActionController::TestCase
     @practice = practices :oss
   end
 
-  test 'should get new, when new practice' do
-    get :new, practice_id: practices(:no_progress).id
+  test 'should get new' do
+    get :new, practice_id: @practice.id
 
-    assert { assigns(:daily_progress).goal == 0 }
-    assert_response 201
-  end
-
-  test 'should get new, when continuing progress' do
-    practice = practices :no_today_progress
-    yesterday_progress = daily_progresses :yesterday_progress
-
-    get :new, practice_id: practice.id
-
-    assert { assigns(:daily_progress).goal == yesterday_progress.progress }
     assert_response 201
   end
 
