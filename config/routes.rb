@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   resources :practices
-  resources :daily_progresses, only: :create
+  resources :daily_progresses, only: [:new, :create]
 
 end

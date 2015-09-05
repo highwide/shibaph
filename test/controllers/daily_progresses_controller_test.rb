@@ -7,11 +7,11 @@ class DailyProgressesControllerTest < ActionController::TestCase
   end
 
   test 'should get new' do
-    yesterday_progress = daily_progresses :yeesterday_oss_progress
+    yesterday_progress = daily_progresses :yesterday_oss_progress
 
-    get :new, daily_progress: { practice_id: @practice.id }
+    get :new, practice_id: @practice.id
 
-    assert { assigns(:daily_progress).goal.eq yesterday_progress.progress }
+    assert { assigns(:daily_progress).goal == yesterday_progress.progress }
     assert_response 201
   end
 

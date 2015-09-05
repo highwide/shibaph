@@ -1,6 +1,12 @@
 class DailyProgressesController < ApplicationController
   permits :progress, :practice_id, :goal
 
+  def new(practice_id:)
+    yesterday_progress = DailyProgress.find_by practice_id: practice_id, done_at: Time.zone.yesterday
+    @daily_progress = DailyProgress.new practice_id: practice_id, goal: yesterday_progress.progress
+    render json: @daily_progress, status: 201
+  end
+
   def create(daily_progress)
     @daily_progress = DailyProgress.new daily_progress
     @daily_progress.done_at = Time.zone.today
