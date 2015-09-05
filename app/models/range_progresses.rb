@@ -27,7 +27,7 @@ class RangeProgresses
       @done_dates.each_with_object([]) do |date, dates_by_continuity|
         if dates_by_continuity.blank? || dates_by_continuity.last.last + 1.day != date
           dates_by_continuity << [date]
-        else 
+        else
           dates_by_continuity.last << date
         end
       end
