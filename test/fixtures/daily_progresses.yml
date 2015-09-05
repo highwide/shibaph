@@ -5,8 +5,8 @@ DEFAULTS: &DEFAULTS
   goal: 1
   progress: 1
 
-yesterday_oss_progress:
-  <<: *DEFAULTS
+yesterday_progress:
+  practice: no_today_progress
   done_at: <%= Time.zone.yesterday %>
   goal: 5
   progress: 10

@@ -6,3 +6,9 @@ DEFAULTS: &DEFAULTS
 oss:
   title: OSS Contribute
   unit: pr
+
+no_progress:
+  title: No Porogress
+
+no_today_progress:
+  title: No Today Porogress
