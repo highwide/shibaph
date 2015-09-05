@@ -19,6 +19,4 @@ class DailyProgress < ActiveRecord::Base
   belongs_to :practice
   validates  :practice,    presence: true
   validates  :done_at,     presence: true
-
-  scope :in_this_year, -> { where("done_at >= ?", Time.zone.now.years_ago(1)) }
 end
