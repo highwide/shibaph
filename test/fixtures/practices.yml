@@ -12,3 +12,7 @@ no_progress:
 
 no_today_progress:
   title: No Today Progress
+
+for_range_progresses:
+  <<: *DEFAULTS
+  

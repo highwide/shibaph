@@ -11,18 +11,32 @@ yesterday_progress:
   goal: 5
   progress: 10
 
-range_progress:
+start_of_range_progresses: &START_RANGE
   <<: *DEFAULTS
-  done_at: 2015-08-29
+  practice: for_range_progresses
+  done_at: 2015-08-21
 
-continyity_progress1:
-  <<: *DEFAULTS
-  done_at: 2015-05-01
+longest_streak_progress1:
+  <<: *START_RANGE
+  done_at: 2015-08-23
 
-continyity_progress2:
-  <<: *DEFAULTS
-  done_at: 2015-05-02
+longest_streak_progress2:
+  <<: *START_RANGE
+  done_at: 2015-08-24
 
-continyity_progress3:
-  <<: *DEFAULTS
-  done_at: 2015-05-03
+longest_streak_progress3:
+  <<: *START_RANGE
+  done_at: 2015-08-25
+
+not_done_progress:
+  <<: *START_RANGE
+  done_at: 2015-08-26
+  progress: 0
+
+current_streak_progress1:
+  <<: *START_RANGE
+  done_at: <%= Time.zone.yesterday %>
+
+current_streak_progress2:
+  <<: *START_RANGE
+  done_at: <%= Time.zone.today %>
