@@ -3,10 +3,34 @@
   ul.practices-list.col-md-12
     - @practices.each do |practice|
       li.practice.row
-        .title.col-xs-12
+        .title.col-xs-9
           i.fa.fa-check-square-o.fa-2x
           .text
-            h3 = link_to practice.title, practice_path(practice.id)
+            label= link_to practice.title, practice_path(practice.id)
+        .text.col-xs-3
+          =link_to '進捗入力', new_daily_progress_path(practice_id: practice.id), data: {toggle: 'modal', target: '#newProgress'}, remote: true, id: "newDailyProgress-#{practice.id}"
+
 - else
   .no-practice
     | まだ習慣が登録されていません
+
+= form_for DailyProgress.new do |f|
+  #newProgress.modal.fade aria-labelledby="newProgressLabel" role="dialog" tabindex="-1"
+    .modal-dialog role="document"
+      .modal-content
+        .modal-header
+          button.close aria-label="Close" data-dismiss="modal" type="button"
+            span aria-hidden="true"  &times;
+          h4#newProgressLabel.modal-title 進捗入力
+        .modal-body
+          .form-group
+            = f.label :goal
+            = f.text_field :goal, class: 'form-control'
+          .form-group
+            = f.label :progress
+            = f.text_field :progress, class: 'form-control'
+          = f.hidden_field :practice_id
+        .modal-footer
+          = f.button "閉じる", data: { dismiss: 'modal' }, class: 'btn btn-default'
+          = f.submit "登録", data: { dismiss: 'modal' }, class: 'btn btn-primary'
+
