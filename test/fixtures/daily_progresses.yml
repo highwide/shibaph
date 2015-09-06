@@ -14,23 +14,24 @@ yesterday_progress:
 start_of_range_progresses: &START_RANGE
   <<: *DEFAULTS
   practice: for_range_progresses
-  done_at: 2015-08-21
+  done_at: <%= Time.zone.today - 9.days %>
+  progress: 1
 
 longest_streak_progress1:
   <<: *START_RANGE
-  done_at: 2015-08-23
+  done_at: <%= Time.zone.today - 7.days %>
 
 longest_streak_progress2:
   <<: *START_RANGE
-  done_at: 2015-08-24
+  done_at: <%= Time.zone.today - 6.days %>
 
 longest_streak_progress3:
   <<: *START_RANGE
-  done_at: 2015-08-25
+  done_at: <%= Time.zone.today - 5.days %>
 
 not_done_progress:
   <<: *START_RANGE
-  done_at: 2015-08-26
+  done_at: <%= Time.zone.today - 4.days %>
   progress: 0
 
 current_streak_progress1:
