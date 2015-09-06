@@ -53,7 +53,7 @@ class RangeProgresses
         streak += 1
       end
     else
-      streak, start_date = 0, 'now!'
+      streak, start_date = 0, "now, let's start!"
     end
     @current = {
       days: streak,
