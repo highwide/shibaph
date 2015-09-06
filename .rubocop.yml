@@ -465,3 +465,6 @@ Metrics/ParameterLists:
 
 Metrics/PerceivedComplexity:
   Enabled: false
+
+Style/ExtraSpacing:
+  Enabled: false
